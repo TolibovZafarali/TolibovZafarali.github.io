@@ -1,5 +1,6 @@
 import Header from "../header&footer/Header";
 import backgroundImage from "../../assets/art-background.webp";
+import "./Homepage.css";
 
 const Homepage = () => {
     return (

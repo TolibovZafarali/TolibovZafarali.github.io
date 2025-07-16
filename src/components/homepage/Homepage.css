@@ -1,0 +1,41 @@
+.home-page {
+    min-height: 100dvh; 
+    width: 100vw;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 64px;
+}
+
+@media (max-width: 768px) {
+    .home-page {
+        background-size: cover;
+        background-position: center top;
+    }
+}
+
+.hero-main {
+    position: absolute;
+    bottom: 40px;         
+    left: 40px;    
+    color: white;
+    font-size: 3rem;
+    z-index: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .hero-main {
+        bottom: 20px;
+        left: 20px;
+        font-size: 2rem;
+    }
+}
