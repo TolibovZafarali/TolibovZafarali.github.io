@@ -1,65 +1,69 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    return (
-        <>
-            <header>
-                {/* Left side name */}
-                <Link to="/" className="full-name">
-                    Zafarali Tolibov
-                </Link>
+  return (
+    <>
+      <header>
+        <div className="left-title">Software Developer</div>
 
-                {/* Desktop Nav */}
-                <div className="topnav">
-                    <NavLink to="/" end>Home</NavLink>
-                    <NavLink to="/news">News</NavLink>
-                    <NavLink to="/contact">Contact</NavLink>
-                    <NavLink to="/about">About</NavLink>
-                </div>
+        <div className="full-name-wrapper">
+        <a
+          href="#!"
+          className="full-name"
+          onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
+        Zafarali Tolibov
+        </a>
 
-                {/* Mobile hamburger menu button */}
-                <button
-                    className="menu-toggle"
-                    onClick={() => setMenuOpen(true)}
-                    aria-label="Open navigation menu"
-                >
-                    ☰
-                </button>
-            </header>
 
-            {/* Overlay backdrop */}
-            {menuOpen && (
-                <div className="backdrop" onClick={() => setMenuOpen(false)}></div>
-            )}
+        </div>
 
-            {/* Mobile side drawer menu */}
-            <div className={`side-drawer ${menuOpen ? "open" : ""}`}>
-                <button className="close-btn" onClick={() => setMenuOpen(false)}>
-                    ×
-                </button>
-                <NavLink to="/" end onClick={() => setMenuOpen(false)}>Home</NavLink>
-                <NavLink to="/news" onClick={() => setMenuOpen(false)}>News</NavLink>
-                <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
-                <NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink>
-            
-                <div className="social-icons">
-                <a href="https://github.com/TolibovZafarali" target="_blank" rel="noreferrer">
-                    <FaGithub />
-                </a>
-                <a href="https://linkedin.com/in/zafarali-tolibov" target="_blank" rel="noreferrer">
-                    <FaLinkedin />
-                </a>
-                </div>
-            </div>
 
-            
-        </>
-    );
+        <div className="topnav">
+          <a href="#projects">Projects</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(true)}
+          aria-label="Open navigation menu"
+        >
+          ☰
+        </button>
+      </header>
+
+      {menuOpen && (
+        <div className="backdrop" onClick={() => setMenuOpen(false)}></div>
+      )}
+
+      <div className={`side-drawer ${menuOpen ? "open" : ""}`}>
+        <button className="close-btn" onClick={() => setMenuOpen(false)}>
+          ×
+        </button>
+        <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+        <a href="#resume" onClick={() => setMenuOpen(false)}>Resume</a>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+
+        <div className="social-icons">
+          <a href="https://github.com/TolibovZafarali" target="_blank" rel="noreferrer">
+            <FaGithub />
+          </a>
+          <a href="https://linkedin.com/in/zafarali-tolibov" target="_blank" rel="noreferrer">
+            <FaLinkedin />
+          </a>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Header;
