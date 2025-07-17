@@ -1,19 +1,25 @@
 header {
     position: fixed;
-    width: 100%;
-    color: white;
     top: 0;
     left: 0;
+    width: 100%;
     height: 64px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, 0.1);
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    color: #f2f2f2;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f2f2f2;
+    z-index: 1000;
+}
+
+/* Name in the center */
+.full-name-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .full-name {
@@ -28,35 +34,20 @@ header {
     text-shadow: 0 0 8px #ffffff, 0 0 16px white;
 }
 
+/* Desktop nav links */
 .topnav {
-    overflow: hidden;
-    margin-left: auto;
     font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    margin: 5px;
-    border-radius: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    transition: all 0.3s;
+    margin-left: auto;
 }
 
 .topnav a {
     position: relative;
-    color: #f2f2f2;
-    padding: 14px 16px;
-    text-decoration: none;
     font-size: 17px;
+    color: #f2f2f2;
+    text-decoration: none;
     margin: 5px;
+    padding: 14px 20px;
+    border-radius: 5px;
     transition: color 0.3s;
 }
 
@@ -64,7 +55,7 @@ header {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: 8px; 
+    bottom: 8px;
     transform: translateX(-50%) scaleX(0);
     transform-origin: center;
     width: 80%;
@@ -78,6 +69,7 @@ header {
     transform: translateX(-50%) scaleX(1);
 }
 
+/* Hamburger menu icon */
 .menu-toggle {
     display: none;
     font-size: 28px;
@@ -85,11 +77,11 @@ header {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: auto;
     margin-right: 20px;
     z-index: 1001;
 }
 
+/* Side drawer styles */
 .side-drawer {
     position: fixed;
     top: 0;
@@ -107,24 +99,24 @@ header {
     z-index: 1100;
 }
 
+.side-drawer.open {
+    right: 0;
+}
+
 .side-drawer a {
     font-size: 18px;
     color: black;
     font-family: "DM Serif Display", serif;
     text-decoration: none;
-    position: relative;
     transition: text-shadow 0.3s ease, color 0.3s ease;
 }
 
 .side-drawer a:hover {
     color: black;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 16px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
-.side-drawer.open {
-    right: 0;
-}
-
+/* Side drawer close backdrop */
 .backdrop {
     position: fixed;
     top: 0;
@@ -135,6 +127,7 @@ header {
     z-index: 1000;
 }
 
+/* Side drawer close button */
 .close-btn {
     position: absolute;
     top: 20px;
@@ -146,16 +139,7 @@ header {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .topnav {
-        display: none;
-    }
-}
-
+/* Social media icons in mobile drawer */
 .social-icons {
     margin-top: auto;
     padding: 30px 0 20px;
@@ -166,17 +150,8 @@ header {
 
 .social-icons a {
     font-size: 24px;
-    display: inline-block;
-    line-height: 1;
     color: black;
     transition: text-shadow 0.3s, transform 0.3s;
-}
-
-.social-icons a svg {
-    height: 1em;
-    width: 1em;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .social-icons a:hover {
@@ -184,12 +159,14 @@ header {
     transform: scale(1.2);
 }
 
+/* Hide social icons on desktop */
 @media (min-width: 769px) {
-    .social-icons {
-        display: none;
-    }
+.social-icons {
+    display: none;
+}
 }
 
+/* Left-side title (hidden on mobile) */
 .left-title {
     font-size: 18px;
     padding-left: 20px;
@@ -200,15 +177,33 @@ header {
     align-items: center;
 }
 
+@media (max-width: 768px) {
+.menu-toggle {
+    display: block;
+}
+
+.topnav {
+    display: none;
+}
+
+.left-title {
+    display: none;
+}
+
+header {
+    justify-content: flex-end;
+    padding-right: 20px;
+    }
+
 .full-name-wrapper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
-@media (max-width: 768px) {
-    .left-title {
-      display: none;
-    }
-  }
-  
+.menu-toggle {
+    display: block;
+    margin-right: 0; /* Optional, since padding on header already adds spacing */
+}
+}
+

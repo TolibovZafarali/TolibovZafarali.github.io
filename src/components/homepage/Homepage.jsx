@@ -1,49 +1,15 @@
-import { useEffect, useState } from "react";
 import Header from "../header&footer/Header";
 import backgroundImage from "../../assets/art-background.webp";
 import "./Homepage.css";
+import Footer from "../header&footer/Footer";
 
 const Homepage = () => {
-  const [overlayOpacity, setOverlayOpacity] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.querySelector(".hero-section");
-      if (!heroSection) return;
-  
-      const scrollTop = window.scrollY;
-      const fadeStart = 0;
-      const fadeEnd = heroSection.offsetHeight;
-  
-      if (scrollTop <= fadeStart) {
-        setOverlayOpacity(0);
-      } else if (scrollTop >= fadeEnd) {
-        setOverlayOpacity(1);
-      } else {
-        const progress = (scrollTop - fadeStart) / (fadeEnd - fadeStart);
-        setOverlayOpacity(progress);
-      }
-    };
-  
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
-
   return (
     <div className="home-page">
       <div
         className="background-image"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-        }}
-      />
-
-      <div
-        className="background-dark-overlay"
-        style={{
-          opacity: overlayOpacity,
         }}
       />
 
@@ -59,22 +25,17 @@ const Homepage = () => {
         <div className="hero-bio">
           <p>
             Hey, I'm <span className="highlight">Zafarali Tolibov</span> — but you can call me <span className="highlight">Ali</span>.
+
+            My journey into tech started with childhood curiosity. I briefly studied at the <span className="highlight">University of Economics</span>, but rediscovered my passion for technology while learning clunky accounting software.
+
+            That spark pushed me to start coding — first in <span className="highlight">Python</span>, then full-stack development through <span className="highlight">LaunchCode</span>. Today, I’m focused on building clean, intuitive, and powerful web apps with <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, <span className="highlight">Java</span>, and <span className="highlight">Spring Boot</span>.
+
+            Let’s build something smarter.
           </p>
         </div>
       </section>
 
-      {/* Content Sections */}
-      <section id="projects" className="full-screen-section">
-        <h2>Projects</h2>
-      </section>
-
-      <section id="resume" className="full-screen-section">
-        <h2>Resume</h2>
-      </section>
-
-      <section id="contact" className="full-screen-section">
-        <h2>Contact</h2>
-      </section>
+      <Footer />
     </div>
   );
 };

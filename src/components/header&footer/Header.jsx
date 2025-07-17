@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -11,25 +12,19 @@ const Header = () => {
         <div className="left-title">Software Developer</div>
 
         <div className="full-name-wrapper">
-        <a
-          href="#!"
-          className="full-name"
-          onClick={(e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-      >
-        Zafarali Tolibov
-        </a>
-
-
+          <NavLink
+            to="/"
+            className="full-name"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            Zafarali Tolibov
+          </NavLink>
         </div>
 
-
         <div className="topnav">
-          <a href="#projects">Projects</a>
-          <a href="#resume">Resume</a>
-          <a href="#contact">Contact</a>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/resume">Resume</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </div>
 
         <button
@@ -49,9 +44,9 @@ const Header = () => {
         <button className="close-btn" onClick={() => setMenuOpen(false)}>
           ×
         </button>
-        <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
-        <a href="#resume" onClick={() => setMenuOpen(false)}>Resume</a>
-        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        <NavLink to="/projects" onClick={() => setMenuOpen(false)}>Projects</NavLink>
+        <NavLink to="/resume" onClick={() => setMenuOpen(false)}>Resume</NavLink>
+        <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
 
         <div className="social-icons">
           <a href="https://github.com/TolibovZafarali" target="_blank" rel="noreferrer">

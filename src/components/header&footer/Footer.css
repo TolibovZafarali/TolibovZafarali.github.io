@@ -1,0 +1,63 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 64px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+    color: white;
+    font-family: "DM Serif Display", serif;
+    padding: 0 20px;
+  }
+  
+  /* Desktop: show icons, hide title */
+
+  .footer-social-icons {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .footer-social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: filter 0.3s ease;
+  }
+  
+  .footer-social-icons a:hover {
+    filter: drop-shadow(0 0 1px #ffffff)
+            drop-shadow(0 0 10px #ffffff)
+            drop-shadow(0 0 20px #ffffff);
+  }
+
+  .footer-social-icons a:active {
+    filter: drop-shadow(0 0 1px #ffffff)
+            drop-shadow(0 0 5px #ffffff)
+            drop-shadow(0 0 10px #ffffff);
+  }
+  
+  
+  
+  .footer-title {
+    display: none;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  /* Mobile: hide icons, show title */
+  @media (max-width: 768px) {
+    .footer-social-icons {
+      display: none;
+    }
+  
+    .footer-title {
+      display: block;
+    }
+  }
+  
