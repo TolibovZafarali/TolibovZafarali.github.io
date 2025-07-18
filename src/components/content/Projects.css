@@ -11,3 +11,23 @@
 .projects-content img:hover {
     filter: drop-shadow(0 0 8px white);
 }
+
+.alpha-pi-description {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+.alpha-pi-text {
+    color: white;
+    font-size: 1rem;
+    max-width: 500px;
+    line-height: 1.5;
+    font-family: "EB Garamond", serif;
+    text-align: center;
+}
+
+hr {
+    width: 70%;
+}

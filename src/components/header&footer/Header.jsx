@@ -2,9 +2,12 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import resume from "../../assets/resume.pdf";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showResumePreview, setShowResumePreview] = useState(false);
+
 
   return (
     <>
@@ -23,7 +26,15 @@ const Header = () => {
 
         <div className="topnav">
           <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/resume">Resume</NavLink>
+          <button
+              className="resume-link"
+              onClick={() => {
+                setMenuOpen(false);
+                setShowResumePreview(true);
+              }}
+              >
+              Resume
+            </button>
           <NavLink to="/contact">Contact</NavLink>
         </div>
 
@@ -45,7 +56,15 @@ const Header = () => {
           ×
         </button>
         <NavLink to="/projects" onClick={() => setMenuOpen(false)}>Projects</NavLink>
-        <NavLink to="/resume" onClick={() => setMenuOpen(false)}>Resume</NavLink>
+        <button
+              className="resume-link-phone"
+              onClick={() => {
+                setMenuOpen(false);
+                setShowResumePreview(true);
+              }}
+              >
+              Resume
+            </button>
         <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
 
         <div className="social-icons">
@@ -57,6 +76,28 @@ const Header = () => {
           </a>
         </div>
       </div>
+
+      {showResumePreview && (
+        <div className="resume-overlay" onClick={() => setShowResumePreview(false)}>
+          <div className="resume-preview" onClick={(e) => e.stopPropagation()}>
+            
+              <button
+                className="close-preview"
+                onClick={() => setShowResumePreview(false)}
+              >
+                ×
+              </button>
+            
+            <iframe
+              src={resume}
+              title="Resume Preview"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+            ></iframe>
+          </div>
+       </div>
+      )}
     </>
   );
 };
