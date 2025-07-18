@@ -35,7 +35,7 @@ const Header = () => {
               >
               Resume
             </button>
-          <NavLink to="/contact">Contact</NavLink>
+            <a href="mailto:zafaralit67@gmail.com" className="contact-link">Contact</a>
         </div>
 
         <button
@@ -65,7 +65,13 @@ const Header = () => {
               >
               Resume
             </button>
-        <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
+            <a
+                href="mailto:zafarali@example.com"
+                className="contact-link"
+                onClick={() => setMenuOpen(false)}
+              >
+                Contact
+            </a>
 
         <div className="social-icons">
           <a href="https://github.com/TolibovZafarali" target="_blank" rel="noreferrer">
