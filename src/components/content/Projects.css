@@ -1,0 +1,13 @@
+.projects-content {
+    padding-top: 64px;
+}
+
+.projects-content img {
+    height: 50px;
+    padding-left: 15px;
+    transition: all 0.3s;
+  }
+  
+.projects-content img:hover {
+    filter: drop-shadow(0 0 8px white);
+}

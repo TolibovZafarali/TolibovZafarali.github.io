@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="main-footer animate-from-bottom">
       <div className="footer-social-icons">
         <a href="https://github.com/TolibovZafarali" target="_blank" rel="noreferrer">
           <FaGithub />

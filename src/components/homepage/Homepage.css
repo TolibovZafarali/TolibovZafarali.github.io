@@ -28,15 +28,16 @@
   /* Bottom-left positioning for hero-main */
   .hero-main {
     position: absolute;
-    bottom: 32px;
+    bottom: 64px;
     left: 32px;
     color: white;
     text-align: left;
     font-size: 3rem;
     font-weight: bold;
     line-height: 1;
+    transition: all 0.3s ease;
   }
-
+  
   .hero-main h1 {
     margin: 0;
     font-family: "Instrument Serif", serif;
@@ -44,7 +45,6 @@
     font-style: normal;
     font-size: 100px;
   }
-
   
   /* Right-center positioning for hero-bio */
   .hero-bio {
@@ -73,51 +73,39 @@
   .highlight {
     color: #f2f2f2;
     text-shadow:
-        0 0 6px rgba(255, 255, 255, 0.5),
-        0 0 12px rgba(255, 255, 255, 0.4),
-        0 0 20px rgba(255, 255, 255, 0.3);
+      0 0 6px rgba(255, 255, 255, 0.5),
+      0 0 12px rgba(255, 255, 255, 0.4),
+      0 0 20px rgba(255, 255, 255, 0.3);
   }
   
-  /* Optional: responsive adjustments */
+  /* Mobile adjustments */
   @media (max-width: 768px) {
-    .hero-main {
-      font-size: 2rem;
-      left: 16px;
-      bottom: 16px;
+    .hero-section {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 100px 16px 16px;
+      gap: 24px;
+      position: relative;
     }
   
-    .hero-bio {
-      right: 16px;
-      font-size: 17px;
-      max-width: 90%;
+    .hero-main {
+      position: static;
+      font-size: 2rem;
     }
-
+  
     .hero-main h1 {
       font-size: 60px;
     }
-  }
-
-  .hero-main {
-    position: absolute;
-    bottom: 64px;
-    left: 32px;
-    color: white;
-    text-align: left;
-    font-size: 3rem;
-    font-weight: bold;
-    line-height: 1;
-    transition: all 0.3s ease;
+  
+    .hero-bio {
+      position: static;
+      transform: none;
+      right: auto;
+      top: auto;
+      font-size: 1rem;
+      max-width: 100%;
+      padding: 16px;
+    }
   }
   
-@media (max-width: 768px) {
-.hero-main {
-    top: 75px;
-    bottom: auto; /* override bottom positioning */
-    left: 16px;
-    font-size: 2rem;
-}
-
-.hero-main h1 {
-    font-size: 60px;
-}
-}

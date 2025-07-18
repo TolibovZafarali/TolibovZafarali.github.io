@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <>
-      <header>
+      <header className="main-header animate-from-top">
         <div className="left-title">Software Developer</div>
 
         <div className="full-name-wrapper">
