@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.5191d867.css",
-    "main.js": "/static/js/main.03e8b11a.js",
+    "main.js": "/static/js/main.f74727b4.js",
     "static/media/tree-dark.svg": "/static/media/tree-dark.91f872de4909f214abc4659cfed0cb1e.svg",
     "static/media/resume.pdf": "/static/media/resume.bb3547586bfff6df2b38.pdf",
-    "static/media/transparent.svg": "/static/media/transparent.db4ad4af4ba3954079ab163493ec4735.svg",
+    "static/media/alpha-pi-logo.svg": "/static/media/alpha-pi-logo.6f8e2a5879bb16e356cc9c89b867c9bb.svg",
     "index.html": "/index.html",
     "main.5191d867.css.map": "/static/css/main.5191d867.css.map",
-    "main.03e8b11a.js.map": "/static/js/main.03e8b11a.js.map"
+    "main.f74727b4.js.map": "/static/js/main.f74727b4.js.map"
   },
   "entrypoints": [
     "static/css/main.5191d867.css",
-    "static/js/main.03e8b11a.js"
+    "static/js/main.f74727b4.js"
   ]
 }
