@@ -1,5 +1,5 @@
 import Header from "../header&footer/Header";
-import backgroundImage from "../../assets/art-background.webp";
+import backgroundImage from "../../assets/tree-dark.svg";
 import "./Homepage.css";
 import Footer from "../header&footer/Footer";
 

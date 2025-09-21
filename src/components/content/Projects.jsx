@@ -1,6 +1,6 @@
 import Footer from "../header&footer/Footer";
 import Header from "../header&footer/Header";
-import alphaPiLogo from "../../assets/transparent.svg";
+import alphaPiLogo from "../../assets/alpha-pi-logo.svg";
 import "./Projects.css";
 
 const Projects = () => {
@@ -18,7 +18,7 @@ const Projects = () => {
             <main className="projects-content">
                 <div className="alpha-pi-project">
                     <div className="alpha-pi-description">
-                        <a href="https://alpha-pi.netlify.app/">
+                        <a href="https://thealphapi.com/">
                             <img src={alphaPiLogo} alt="Alpha Pi Project" className="alpha-pi-logo" />
                     </a>
                     <p className="alpha-pi-text">

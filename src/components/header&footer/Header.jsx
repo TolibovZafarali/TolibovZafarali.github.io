@@ -66,7 +66,7 @@ const Header = () => {
               Resume
             </button>
             <a
-                href="mailto:zafarali@example.com"
+                href="mailto:zafaralit67@gmail.com"
                 className="contact-link"
                 onClick={() => setMenuOpen(false)}
               >
